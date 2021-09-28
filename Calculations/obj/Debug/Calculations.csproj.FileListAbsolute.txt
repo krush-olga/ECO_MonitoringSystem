@@ -1,0 +1,6 @@
+F:\kpi\ECO_MonitoringSys\Calculations\bin\Debug\Calculations.dll
+F:\kpi\ECO_MonitoringSys\Calculations\bin\Debug\Calculations.pdb
+F:\kpi\ECO_MonitoringSys\Calculations\obj\Debug\Calculations.csprojAssemblyReference.cache
+F:\kpi\ECO_MonitoringSys\Calculations\obj\Debug\Calculations.csproj.CoreCompileInputs.cache
+F:\kpi\ECO_MonitoringSys\Calculations\obj\Debug\Calculations.dll
+F:\kpi\ECO_MonitoringSys\Calculations\obj\Debug\Calculations.pdb
