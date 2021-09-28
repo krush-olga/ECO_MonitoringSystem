@@ -1,0 +1,2318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserMap</name>
+    </assembly>
+    <members>
+        <member name="F:UserMap.ChartForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UserMap.ChartForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UserMap.ChartForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:UserMap.CompareForm.#ctor(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{System.Object}},System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Конструктор для создания формы сравнения
+            </summary>
+            <param name="rowNameAndvalues">Значения для отображения (строка + её имя).</param>
+            <param name="columnNames">Имена колонок (объекты, для которых отображается информация). 
+            Используется отношение каждая коллекция в rowAndvalues последовательно равна каждому значению columnNames.</param>
+            <param name="legend">Легенда для отображения дополнительной ифнформации.</param>
+        </member>
+        <member name="M:UserMap.CompareForm.#ctor(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{System.Object}},System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IDictionary{System.String,System.Double})">
+            <summary>
+            Конструктор для создания формы сравнения
+            </summary>
+            <param name="rowNameAndvalues">Значения для отображения (строка + её имя).</param>
+            <param name="columnNames">Имена колонок (объекты, для которых отображается информация). 
+            Используется отношение каждая коллекция в rowAndvalues последовательно равна каждому значению columnNames.</param>
+            <param name="legend">Легенда для отображения дополнительной ифнформации.</param>
+            <param name="emissionLimits">Лимит выбросов (для каждой строки одно число).</param>
+        </member>
+        <member name="M:UserMap.CompareForm.#ctor(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{System.Object}},System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Конструктор для создания формы сравнения
+            </summary>
+            <param name="rowNameAndvalues">Значения для отображения (строка + её имя).</param>
+            <param name="columnNames">Имена колонок (объекты, для которых отображается информация). 
+            Используется отношение каждая коллекция в rowAndvalues последовательно равна каждому значению columnNames.</param>
+            <param name="legend">Легенда для отображения дополнительной ифнформации.</param>
+            <param name="rowsToUseInChart">Строки, которые будут использоватся в графике</param>
+            <param name="rowX">Имя строки, значения которой будут использоватся в оси Х графика</param>
+        </member>
+        <member name="M:UserMap.CompareForm.#ctor(System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.List{System.Object}},System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IDictionary{System.String,System.Double},System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Конструктор для создания формы сравнения
+            </summary>
+            <param name="rowNameAndvalues">Значения для отображения (строка + её имя)</param>
+            <param name="columnNames">Имена колонок (объекты, для которых отображается информация). 
+            Используется отношение каждая коллекция в rowAndvalues последовательно равна каждому значению columnNames.</param>
+            <param name="legend">Легенда для отображения дополнительной ифнформации.</param>
+            <param name="emissionLimits">Лимит выбросов (для каждой строки одно число).</param>
+            <param name="rowsToUseInChart">Строки, которые будут использоватся в графике</param>
+            <param name="rowX">Имя строки, значения которой будут использоватся в оси Х графика</param>
+        </member>
+        <member name="F:UserMap.CompareForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UserMap.CompareForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UserMap.CompareForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:UserMap.CompareSettings.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UserMap.CompareSettings.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UserMap.CompareSettings.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:UserMap.Helpers.WebHelper">
+            <summary>
+            Инкапсулирует создание запросов по укзананному URL.
+            </summary>
+        </member>
+        <member name="M:UserMap.Helpers.WebHelper.GetFromURL(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Возвращает тело ответа по запросу на указанный URL с указанными параметрами.
+            </summary>
+            <param name="url">URL по которому будет делается запрос.</param>
+            <param name="keyValues">Параметры запроса в виде &lt;название параметра, значение параметра&gt;</param>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.ArgumentNullException">Возникает, когд</exception>
+            <returns>Тело ответа в виде строки.</returns>
+        </member>
+        <member name="T:UserMap.Helpers.ComboBoxExtensions">
+            <summary>
+        Содержит в себе методы расширения для компонента <see cref="T:System.Windows.Forms.ComboBox" />
+      </summary>
+        </member>
+        <member name="M:UserMap.Helpers.ComboBoxExtensions.FillComboBoxFromBDAsync``1(System.Windows.Forms.ComboBox,Data.DBManager,System.String,System.String,System.String,System.Func{System.Collections.Generic.List{System.Object},``0},System.String,System.String,System.Action{System.Windows.Forms.ComboBox})">
+            <summary>
+        Загружает данные из указанной таблицы в текущий <see cref="T:System.Windows.Forms.ComboBox" /> по указанному формату (<paramref name="func" />).
+      </summary><typeparam name="TResult">
+        Выходной тип, который будет сохраняться в виде коллекции в свойстве <c>DataSource</c> текущего <see cref="T:System.Windows.Forms.ComboBox" />.
+      </typeparam><param name="comboBox">
+        Выбранный <see cref="T:System.Windows.Forms.ComboBox" />.
+      </param><param name="dbManager">
+        <see cref="T:Data.DBManager" /> используется для обращения к базе данных.
+      </param><param name="table">
+        Таблица, с которой будет выполняться выбор.
+      </param><param name="columns">
+        Колонки указанной таблицы (<paramref name="table" />), которые будут в учавствовать в выборе.
+      </param><param name="condition">
+        Условие выбора данных.
+      </param><param name="func">
+        Функция по превращению полученных данных из бд в <typeparamref name="TResult" />.
+      </param><param name="displayComboBoxMember">
+        Свойство типа <typeparamref name="TResult" />, которое учавствует в отображении в <see cref="T:System.Windows.Forms.ComboBox" />.
+      </param><param name="valueComboBoxMember">
+        Свойство типа <typeparamref name="TResult" />, которое возвращаеться <see cref="T:System.Windows.Forms.ComboBox" /> при вызове свойсва <c>SelectedValue</c>.
+      </param><param name="falultAction">
+        Действие при возникновении исключения или при отсутствии элементов у выборки.
+      </param><exception cref="T:System.ArgumentNullException" /><exception cref="T:System.ArgumentException" /><returns>
+        Возвращает текущую задачу для ожидания.
+      </returns>
+        </member>
+        <member name="T:UserMap.Helpers.ExceptionExtensions">
+            <summary>
+        Содержит в себе методы расширения для класса <see cref="T:System.Exception" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Helpers.ExceptionExtensions.SetStackTrace(System.Exception,System.Diagnostics.StackTrace)">
+            <summary>
+        Устанавливает новую трасировку стека для указанного исключения.
+      </summary><param name="target">
+        Исключение, для которого нужно ставить новую трасировку стека.
+      </param><param name="stack">
+        Новая трасировка стека.
+      </param><returns>
+        Исключение с утановленной новой страсировкой стека.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.ExceptionExtensions.GetInnerestException(System.Exception)">
+            <summary>
+        Получает самое вложенное исключение.
+      </summary><param name="target">
+        Исключение, с которого нужно получить вложенное исключение.
+      </param><returns>
+        Самое вложенное исключение или текущее исключение, если внутрнее исключение равно <see langword="null" />.
+      </returns>
+        </member>
+        <member name="T:UserMap.Helpers.IEnumerableExtensions">
+            <summary>
+        Содержит в себе методы расширения для <see cref="T:System.Collections.Generic.IEnumerable`1" /> и их копии для <see cref="T:System.Collections.IEnumerable" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Helpers.IEnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+        Ищет элемент в соответствии с указанным предикатом (<paramref name="predicat" />).
+      </summary><typeparam name="T">
+        Тип, который содержиться в коллекции.
+      </typeparam><param name="collection">
+        Коллекция, в которой будет происходить поиск.
+      </param><param name="predicat">
+        Предикат, по которому будет происходить выбор индекса.
+      </param><returns>
+        Отсчитываемый от 0 индекс найденого элемента. Иначе <c>-1</c>.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.IEnumerableExtensions.IndexOf``1(System.Collections.IEnumerable,System.Func{``0,System.Boolean})">
+            <summary>
+        Ищет элемент в соответствии с указанным предикатом (<paramref name="predicat" />).
+      </summary><typeparam name="T">
+        Тип, который содержиться в коллекции.
+      </typeparam><param name="collection">
+        Коллекция, в которой будет происходить поиск.
+      </param><param name="predicat">
+        Предикат, по которому будет происходить выбор индекса.
+      </param><returns>
+        Отсчитываемый от 0 индекс найденого элемента. Иначе <c>-1</c>.
+      </returns>
+        </member>
+        <member name="T:UserMap.Helpers.MapCache">
+            <summary>
+            Представляет кэш, в котром можно сохранять общие элементы для подальшего их использования.
+            </summary>
+        </member>
+        <member name="M:UserMap.Helpers.MapCache.GetItem(System.String)">
+            <summary>
+            Возвращает ссылку на элемент в памяти.
+            </summary>
+            <param name="key">Ключ элемента</param>
+            <returns>Ссылку на элемент в памяти или <see langword="null"/>, если ключ отсутствует</returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapCache.GetItemClone(System.String)">
+            <summary>
+            Возвращает копию элементы, если объект реализует интерфейс <see cref="T:System.ICloneable"/>. Иначе возвращает ссылку на элемент
+            </summary>
+            <param name="key">Ключ элемента</param>
+            <returns>Новая копия элементы по ключу или <see langword="null"/>, если ключ отсутствует</returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapCache.ContainsKey(System.String)">
+            <summary>
+            Проверяет наличие указанного ключа.
+            </summary>
+            <param name="key"></param>
+            <returns><see langword="true"/> если такой ключ существует. Иначе <see langword="false"/></returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapCache.Add(System.String,System.Object)">
+            <summary>
+            Добавляет элемент в кэш.
+            </summary>
+            <param name="key"></param>
+            <param name="img"></param>
+        </member>
+        <member name="M:UserMap.Helpers.MapCache.Remove(System.String,System.Boolean)">
+            <summary>
+            Удаляет элемент из кэша.
+            </summary>
+            <param name="key">Ключ элемента</param>
+            <param name="dispose">Указывает, нужно ли высвобождать элемент, если его можно вывободить,
+            после удаления его из кеша. По-умолочанию высвобождает/></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:UserMap.Helpers.MapCache.Clear">
+            <summary>
+            Чистит все элементы.
+            </summary>
+        </member>
+        <member name="T:UserMap.Helpers.MapHelper">
+            <summary>
+        Класс-помощник для создания <see cref="T:UserMap.Core.NamedGoogleMarker" />, <see cref="T:GMap.NET.WindowsForms.GMapPolygon" />, <see cref="T:GMap.NET.WindowsForms.GMapRoute" />
+      </summary>
+        </member>
+        <member name="M:UserMap.Helpers.MapHelper.CreateMarker(GMap.NET.PointLatLng,System.Drawing.Bitmap,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый экземляр <see cref="T:UserMap.Core.NamedGoogleMarker" /> с изображением.
+      </summary><param name="coord">
+        Координата маркера.
+      </param><param name="img">
+        Изображение для отображения маркера.
+      </param><param name="format">
+        Формат, по которому будут отображаться название и описание маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><returns>
+        Новый экземпляр <see cref="T:UserMap.Core.NamedGoogleMarker" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapHelper.CreateMarker(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый экземляр <see cref="T:UserMap.Core.NamedGoogleMarker" /> с изображением.
+      </summary><param name="coord">
+        Координата маркера.
+      </param><param name="markerType">
+        Тип отображения маркера на карте.
+      </param><param name="format">
+        Формат, по которому будут отображаться название и описание маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><returns>
+        Новый экземпляр <see cref="T:UserMap.Core.NamedGoogleMarker" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapHelper.CreatePolygon(System.Collections.Generic.List{GMap.NET.PointLatLng},System.Drawing.Color,System.Int32,System.String)">
+            <summary>
+        Создаёт новый экземляр <see cref="T:GMap.NET.WindowsForms.GMapPolygon" /> с чёрными линиями.
+      </summary><param name="coords">
+        Координаты для полигона.
+      </param><param name="fill">
+        Цвет закраски полигона.
+      </param><param name="opacity">
+        Прозрачность закраски.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><returns>
+        Новый экземпляр <see cref="T:GMap.NET.WindowsForms.GMapPolygon" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapHelper.CreatePolygon(System.Collections.Generic.List{GMap.NET.PointLatLng},System.Drawing.Color,System.Int32,System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый экземляр <see cref="T:GMap.NET.WindowsForms.GMapPolygon" />.
+      </summary><param name="coords">
+        Координаты для полигона.
+      </param><param name="fill">
+        Цвет закраски полигона.
+      </param><param name="opacity">
+        Прозрачность закраски.
+      </param><param name="stroke">
+        Цвет линий полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><returns>
+        Новый экземпляр <see cref="T:GMap.NET.WindowsForms.GMapPolygon" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapHelper.CreateRoute(System.Collections.Generic.List{GMap.NET.PointLatLng},System.String)">
+            <summary>
+        Создаёт новый экземляр <see cref="T:GMap.NET.WindowsForms.GMapRoute" /> с чёрными линиями.
+      </summary><param name="coords">
+        Координаты для маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><returns>
+        Новый экземпляр <see cref="T:GMap.NET.WindowsForms.GMapRoute" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapHelper.CreateRoute(System.Collections.Generic.List{GMap.NET.PointLatLng},System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый экземляр <see cref="T:GMap.NET.WindowsForms.GMapRoute" />.
+      </summary><param name="coords">
+        Координаты для маршрута.
+      </param><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><returns>
+        Новый экземпляр <see cref="T:GMap.NET.WindowsForms.GMapRoute" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.MapHelper.DisposeElements(System.Collections.Generic.IEnumerable{System.IDisposable})">
+            <summary>
+        Высвобождает элементы из указанной коллекции <paramref name="disposables" />.
+      </summary><param name="disposables">
+        Коллекция с элементами типа <see cref="T:System.IDisposable" />.
+      </param>
+        </member>
+        <member name="T:UserMap.Helpers.TaskExtensions">
+            <summary>
+        Содержит в себе методы расширения для класса <see cref="T:System.Threading.Tasks.Task" />
+      </summary>
+        </member>
+        <member name="M:UserMap.Helpers.TaskExtensions.CatchErrorOrCancel(System.Threading.Tasks.Task,System.Action{System.Exception})">
+            <summary>
+        Ловит ошибку или отменённую задачу и передаёт их исключение для дальнейшей обработки.
+        Если ошибки или отмены нет, то ничего не делает.
+      </summary><param name="task">
+        Задача, к которой будет применятся обработка.
+      </param><param name="exceptionHandler">
+        Обработчик исключения.
+      </param><exception cref="T:System.ArgumentNullException">Возникает, когда <paramref name="exceptionHandler" /> или <paramref name="task" /> равны <see langword="null" /></exception>
+        </member>
+        <member name="M:UserMap.Helpers.TaskExtensions.CatchErrorOrCancel``2(System.Threading.Tasks.Task{``0},System.Action{System.Exception},System.Func{``0,``1})">
+            <summary>
+        <para>
+          Ловит ошибку или отменённую задачу и передаёт их исключение для дальнейшей обработки,
+          а результат задачи передаёт значением по-умолчанию для возвращаемым задачей типом.
+        </para>
+        <para>
+          Например, для ссылочного типа значение по-умолчанию будет <see langword="null" />, 
+          в то время как для значимого типа будет значение пустого объекта, например, <code>new Point()</code> для T = <see cref="T:System.Drawing.Point" />
+        </para>
+        <para>Если ошибки или отмены нет, то просто возвращает результат.</para>
+      </summary><typeparam name="T">
+        Начальный тип, возвращаемый задачей.
+      </typeparam><typeparam name="TResult">
+        Выходной тип, который будет возвращаться задачей после обработки в <paramref name="resultFunc" />.
+      </typeparam><param name="task">
+        Задача, к которой будет применятся обработка.
+      </param><param name="exceptionHandler">
+        Обработчик исключения.
+      </param><param name="resultFunc">
+        Обработчик возвращаемого результата.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда <paramref name="exceptionHandler" /> или <paramref name="task" /> равны <see langword="null" />
+      </exception><returns>
+        Результат работы задачи или значение по-умолчанию для указанного <typeparamref name="TResult" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Helpers.TaskExtensions.CatchAndLog(System.Threading.Tasks.Task,UserMap.Services.ILogger,System.String)">
+            <summary>
+        Ловит ошибку или отменённую задачу и передаёт их логирует их с последующим выводом нужного сообщения пользователю.
+        Если текущая конфигурация решения для отладки (Debug), то логирует в консоль Visual Studio (Вид-&gt;Вывод или View-&gt;Output)
+      </summary><param name="task">
+        Задача, к которой будет применятся обработка.
+      </param><param name="logger">
+        Логер для логирования ошибки.
+      </param><param name="errorMessage">
+        Сообщение об ошибке на окне для отображения ошибки.
+      </param>
+        </member>
+        <member name="M:UserMap.Helpers.TaskExtensions.CatchAndLog``1(System.Threading.Tasks.Task{``0},UserMap.Services.ILogger,System.String)">
+            <summary>
+        <para>
+          Ловит ошибку или отменённую задачу и передаёт их логирует их с последующим выводом нужного сообщения пользователю.
+          Если текущая конфигурация решения для отладки (Debug), то логирует в консоль Visual Studio (Вид-&gt;Вывод или View-&gt;Output)
+        </para>
+        <para>
+          Например, для ссылочного типа значение по-умолчанию будет <see langword="null" />,
+          в то время как для значимого типа будет значение пустого объекта, например, <code>new Point()</code> для T = <see cref="T:System.Drawing.Point" />
+        </para>
+        <para>Если ошибки или отмены нет, то просто возвращает результат.</para>
+      </summary><typeparam name="TResult">
+        Начальный тип, возвращаемый задачей.
+      </typeparam><param name="task">
+        Задача, к которой будет применятся обработка.
+      </param><param name="logger">
+        Логер для логирования ошибки.
+      </param><param name="errorMessage">
+        Сообщение об ошибке на окне для отображения ошибки.
+      </param><returns>
+        Результат работы задачи или значение по-умолчанию для указанного <typeparamref name="TResult" />.
+      </returns>
+        </member>
+        <member name="T:UserMap.Core.DrawContext">
+            <summary>
+        Абстрактный класс для рисовния сложной фигуры на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.#ctor(GMap.NET.WindowsForms.GMapOverlay)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.DrawContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.String)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.DrawContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="figureName">
+        Название фигуры для корректного к ней обращения.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.String,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.DrawContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="figureName">
+        Название фигуры для корректного к ней обращения.
+      </param><param name="markerType">
+        Тип маркера из перичесления <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogleType" />.
+      </param>
+        </member>
+        <member name="P:UserMap.Core.DrawContext.Overlay">
+            <summary>
+        Используемый слой для рисования фигуры.
+      </summary>
+        </member>
+        <member name="P:UserMap.Core.DrawContext.PolygonPoints">
+            <summary>
+        Точки фигуры для рисования.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.GetFigureName">
+            <summary>
+        Возвращает название текущей фигуры.
+      </summary><returns>
+        Название текущей фигуры.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.SetFigureName(System.String)">
+            <summary>
+        Устанавливает новое название фигуры.
+      </summary><param name="name">
+        Новое название фигуры.
+      </param><exception cref="T:System.ArgumentException">
+        Возникает, когда новое название равно <see cref="F:System.String.Empty" /> или <see langword="null" />.
+      </exception>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.AddCoord(GMap.NET.PointLatLng)">
+            <summary>
+        Добавляет новую точку для фигуры и отображает её как <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogle" />.
+      </summary><param name="coord">
+        Координата на карте.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.RemoveCoord(System.Int32)">
+            <summary>
+        Убирает точку по индексу у фигуры и так же убирает <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogle" /> принадлежащей этой точке.
+        Если индекс находиться вне диапазона, то ничего не делает.
+      </summary><param name="coordIndex">
+        Индекс координаты на карте.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.RemoveCoord(GMap.NET.PointLatLng)">
+            <summary>
+        Убирает точку у фигуры и так же убирает <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogle" /> принадлежащей этой точке.
+      </summary><param name="coord">
+        Координата на карте.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.MoveCoord(GMap.NET.PointLatLng,System.Int32)">
+            <summary>
+        Двигает точку и <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogle" /> принадлежащей этой точке по указанному индексу на новое место.
+        Если индекс находиться вне диапазона, то ничего не делает.
+      </summary><param name="newCoord">
+        Координата на карте.
+      </param><param name="coordIndex">
+        Координата на карте.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.ClearFigure">
+            <summary>
+        Уберает у фигуры все точки и <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogle" /> и чистит её на карте.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.DrawContext.DrawFigure">
+            <summary>
+        Отвечает за отрисовку фигуры.
+      </summary>
+        </member>
+        <member name="T:UserMap.Core.PolygonContext">
+            <summary>
+        Класс для рисовния полигона на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.Drawing.Color,System.Int32)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.PolygonContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="fill">
+        Цвет зарисовки полигона.
+      </param><param name="opacity">
+        Значение прозрачности зарисовки полигона.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.Drawing.Color,System.Int32,System.String)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.PolygonContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="fill">
+        Цвет зарисовки полигона.
+      </param><param name="opacity">
+        Значение прозрачности зарисовки полигона.
+      </param><param name="polygonName">
+        Название полигона для корректного к ней обращения.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.Drawing.Color,System.Int32,System.String,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.PolygonContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="fill">
+        Цвет зарисовки полигона.
+      </param><param name="opacity">
+        Значение прозрачности зарисовки полигона.
+      </param><param name="polygonName">
+        Название полигона для корректного к ней обращения.
+      </param><param name="markerType">
+        Тип маркера из перичесления <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogleType" />.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.SetOpacity(System.Int32)">
+            <summary>
+        Устанавливает новое значение прозрачности зарисовки полигона. Значение находиться в диапазоне от 0 до 255.
+      </summary><param name="opacity">
+        Значение прозрачности зарисовки полигона.
+      </param><exception cref="T:System.ArgumentOutOfRangeException">
+        Возникает, когда новое название выходит за диапазон от 0 до 255.
+      </exception>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.SetFill(System.Drawing.Color)">
+            <summary>
+        Устанавливает новое значение цвета зарисовки полигона.
+      </summary><param name="fill">
+        Цвет зарисовки полигона.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.SetStroke(System.Drawing.Color)">
+            <summary>
+        Устанавливает новое значение цвета линий полигона.
+      </summary><param name="stroke">
+        Цвет линий полигона.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.GetOpacity">
+            <summary>
+        Возвращает текущее значение прозрачности зарисовки полигона. Значение находиться в диапазоне от 0 до 255.
+      </summary><returns>
+        Значение прозрачности зарисовки полигона.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.GetFill">
+            <summary>
+        Возвращает текущее значение цвета зарисовки полигона.
+      </summary><returns>
+        Цвет зарисовки полигона.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.GetStroke">
+            <summary>
+        Возвращает текущее значение цвета линий полигона.
+      </summary><returns>
+        Цвет линий полигона.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.SetFigureName(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.PolygonContext.DrawFigure">
+            <inheritdoc/>
+        </member>
+        <member name="T:UserMap.Core.RouteContext">
+            <summary>
+        Класс для рисовния маршрута на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.Drawing.Color)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.PolygonContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="routeStroke">
+        Цвет линий маршрута.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.String,System.Drawing.Color)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.PolygonContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="routeName">
+        Название маршрута для корректного к ней обращения.
+      </param><param name="routeStroke">
+        Цвет линий маршрута.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.#ctor(GMap.NET.WindowsForms.GMapOverlay,System.String,System.Drawing.Color,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Конструктор класса <see cref="T:UserMap.Core.PolygonContext" />.
+      </summary><param name="overlay">
+        Слой карты, на котором будет происходить рисование.
+      </param><param name="routeName">
+        Название маршрута для корректного к ней обращения.
+      </param><param name="routeStroke">
+        Цвет линий маршрута.
+      </param><param name="markerType">
+        Тип маркера из перичесления <see cref="T:GMap.NET.WindowsForms.Markers.GMarkerGoogleType" />.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.SetStroke(System.Drawing.Color)">
+            <summary>
+        Устанавливает новое значение цвета линий маршрута.
+      </summary><param name="stroke">
+        Цвет линий маршрута.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.GetStroke">
+            <summary>
+        Возвращает текущее значение цвета линий маршрута.
+      </summary><returns>
+        Цвет линий маршрута.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.SetFigureName(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.RouteContext.DrawFigure">
+            <inheritdoc/>
+        </member>
+        <member name="T:UserMap.Core.IDescribable">
+            <summary>
+        Интерфейс для минимального описания объекта.
+      </summary>
+        </member>
+        <member name="P:UserMap.Core.IDescribable.Type">
+            <summary>
+        Указывает тип объекта.
+      </summary><value>
+        Позволяет получать и устанавливать тип объекта.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.IDescribable.Name">
+            <summary>
+        Указывает название объекта.
+      </summary><value>
+        Позволяет получать и устанавливать название объекта.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.IDescribable.Description">
+            <summary>
+        Представляет описание объекта.
+      </summary><value>
+        Позволяет получать и устанавливать описание объекта.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.IDescribable.Creator">
+            <summary>
+        Представляет объект эксперта, который создал данный маркер.
+      </summary><value>
+        Возвращает и устанавливает объект эксперта.
+      </value>
+        </member>
+        <member name="T:UserMap.Core.NamedGoogleMarker">
+            <summary>
+        Расширенный маркер с возможностью идентефикации как по Id, так и по названию с небольшим описанием.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="type">
+        Тип для отображения маркера на карте.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="type">
+        Тип для отображения маркера на карте.
+      </param><param name="format">
+        Формат для настройки отображения подсказки на основе названии и описания.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String,System.String)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="type">
+        Тип для отображения маркера на карте.
+      </param><param name="format">
+        Формат для настройки отображения подсказки на основе названии и описания.
+      </param><param name="name">
+        Название маркера.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String,System.String,System.String)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="type">
+        Тип для отображения маркера на карте.
+      </param><param name="format">
+        Формат для настройки отображения подсказки на основе названии и описания.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,System.Drawing.Bitmap)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="Bitmap">
+        Картинка для отображения маркера на карте.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,System.Drawing.Bitmap,System.String)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="Bitmap">
+        Картинка для отображения маркера на карте.
+      </param><param name="format">
+        Формат для настройки отображения подсказки на основе названии и описания.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,System.Drawing.Bitmap,System.String,System.String)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="Bitmap">
+        Картинка для отображения маркера на карте.
+      </param><param name="format">
+        Формат для настройки отображения подсказки на основе названии и описания.
+      </param><param name="name">
+        Название маркера.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(GMap.NET.PointLatLng,System.Drawing.Bitmap,System.String,System.String,System.String)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.NamedGoogleMarker" />.
+      </summary><param name="p">
+        Координата маркера на карте.
+      </param><param name="Bitmap">
+        Картинка для отображения маркера на карте.
+      </param><param name="format">
+        Формат для настройки отображения подсказки на основе названии и описания.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+        Конструктор, отвечающий за сериализацию/десериализацию объекта.
+      </summary><param name="info">
+        Содержит данные, необходимые для сериализации/десериализации объекта.
+      </param><param name="context">
+        Источник и назначание заданого потока сериализации/десериализации.
+      </param>
+        </member>
+        <member name="P:UserMap.Core.NamedGoogleMarker.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:UserMap.Core.NamedGoogleMarker.Description">
+            <inheritdoc/>
+        </member>
+        <member name="P:UserMap.Core.NamedGoogleMarker.Format">
+            <summary>
+        Формат отображения текста в подсказке.
+      </summary><value>
+        Возвращает/устанавливает формат отображения текста в подсказке.
+      </value><exception cref="T:System.ArgumentNullException">
+        Возникает, когда <see langword="value" /> равен <see langword="null" />.
+      </exception>
+        </member>
+        <member name="P:UserMap.Core.NamedGoogleMarker.Creator">
+            <inheritdoc/>
+        </member>
+        <member name="P:UserMap.Core.NamedGoogleMarker.Id">
+            <summary>
+        Идентефикатор маркера.
+      </summary><value>
+        Возвращает/устанавливает идентефикатор маркера.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.NamedGoogleMarker.IsDependent">
+            <summary>
+        Показывает, зависим ли маркер от другого объекта.
+      </summary><value>
+        Возвращает/устанавливает зависимость маркера.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.NamedGoogleMarker.ToolTipText">
+            <summary>
+        Представляет текст подсказки маркера.
+      </summary><value>
+        Возвращает текст подсказки.
+      </value>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.NamedGoogleMarker.Equals(UserMap.Core.NamedGoogleMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="T:UserMap.Core.Map">
+            <summary>
+        Представляет оболочку над <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </summary><remarks>
+        <para>
+          Предоставляет методы <c>AddXxx(...)</c> для добавления различных элементов на карту (маркер, полигон, маршрут).
+        </para>
+        <para>
+          Предоставляет методы <c>RemoveXxx(...)</c> для удаление различных элементов из карты (маркер, полигон, маршрут).
+        </para>
+        <para>
+          Позволяет получить или определённые элементы по имени/координате, или все объекты из определённого слоя.
+        </para>
+      </remarks>
+        </member>
+        <member name="M:UserMap.Core.Map.#ctor">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.Map" />.
+        Создаёт новую карту для использования.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.#ctor(GMap.NET.WindowsForms.GMapControl)">
+            <summary>
+        Конструктор класса <see cref="!:Maps.Core.Map" />.
+      </summary><param name="gMapControl">
+        Экземпляр карты для работы с ней.
+      </param>
+        </member>
+        <member name="P:UserMap.Core.Map.MapObject">
+            <summary>
+        Представляет экземпляр карты, над которой будут выполняться действия.
+      </summary><value>
+        Возвращает экземпляр карты.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.Map.SelectedMarker">
+            <summary>
+        Представляет экземпляр текущего выбранного маркера.
+      </summary><value>
+        Возвращает/устанавливает маркер.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.Map.SelectedPolygon">
+            <summary>
+        Представляет экземпляр текущего выбранного полигона.
+      </summary><value>
+        Возвращает/устанавливает полигон.
+      </value>
+        </member>
+        <member name="P:UserMap.Core.Map.SelectedRoute">
+            <summary>
+        Представляет экземпляр текущего выбранного маршрута.
+      </summary><value>
+        Возвращает/устанавливает маршрут.
+      </value>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,System.Drawing.Bitmap)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,System.Drawing.Bitmap,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,System.Drawing.Bitmap,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+        или когда format равен <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,System.Drawing.Bitmap,System.String,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+        или когда format равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,System.Drawing.Bitmap)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,System.Drawing.Bitmap,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,System.Drawing.Bitmap,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+        или когда format равен <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,System.Drawing.Bitmap,System.String,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="img">
+        Изображение для представления точки на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда изображение равно <see langword="null" />
+        или когда format равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException" /><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(System.Drawing.Point,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException" /><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException" /><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(GMap.NET.PointLatLng,GMap.NET.WindowsForms.Markers.GMarkerGoogleType,System.String,System.String,System.String,System.String)">
+            <summary>
+        Создаёт новый маркер на карте по заданным параметрам.
+      </summary><param name="coords">
+        Координата на карте <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="markerType">
+        Тип для изображения маркера на карте.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><param name="format">
+        Нужен для форматирования подсказки маркера.
+      </param><param name="name">
+        Название маркера.
+      </param><param name="description">
+        Описание маркера.
+      </param><exception cref="T:System.ArgumentNullException" /><exception cref="T:System.ArgumentException">
+        Возникает, когда название словя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маркер, если он был добавлен или на маркер из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(UserMap.Core.NamedGoogleMarker)">
+            <!--Не обнаружено элементов, соответствующих тегу include. --><include file="Docs/Core/MapDoc.xml" path="docs/members[@name=&quot;map&quot;]/AddMarkerNamedGoogleMarker1arg/*" />
+        </member>
+        <member name="M:UserMap.Core.Map.AddMarker(UserMap.Core.NamedGoogleMarker,System.String)">
+            <!--Не обнаружено элементов, соответствующих тегу include. --><include file="Docs/Core/MapDoc.xml" path="docs/members[@name=&quot;map&quot;]/AddMarkerNamedGoogleMarker2arg/*" />
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{System.Drawing.Point},System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="points">
+        Точки монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" /> для создания полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{System.Drawing.Point},System.Drawing.Color,System.Int32,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="points">
+        Точки монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" /> для создания полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{System.Drawing.Point},System.Drawing.Color,System.Int32,System.String,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="points">
+        Точки монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" /> для создания полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{System.Drawing.Point},System.Drawing.Color,System.Int32,System.Drawing.Color,System.String,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="points">
+        Точки монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" /> для создания полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="stroke">
+        Цвет линий полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{GMap.NET.PointLatLng},System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="coords">
+        Набор точек для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{GMap.NET.PointLatLng},System.Drawing.Color,System.Int32,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="coords">
+        Набор точек для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{GMap.NET.PointLatLng},System.Drawing.Color,System.Int32,System.String,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="coords">
+        Набор точек для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{GMap.NET.PointLatLng},System.Drawing.Color,System.Int32,System.Drawing.Color,System.String,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="coords">
+        Набор точек для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="stroke">
+        Цвет линий полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{UserMap.Core.NamedGoogleMarker},System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="markers">
+        Набор маркеров для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{UserMap.Core.NamedGoogleMarker},System.Drawing.Color,System.Int32,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="markers">
+        Набор маркеров для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{UserMap.Core.NamedGoogleMarker},System.Drawing.Color,System.Int32,System.String,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="markers">
+        Набор маркеров для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(System.Collections.Generic.IEnumerable{UserMap.Core.NamedGoogleMarker},System.Drawing.Color,System.Int32,System.Drawing.Color,System.String,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="markers">
+        Набор маркеров для полигона.
+      </param><param name="fill">
+        Цвет для закраски полигона.
+      </param><param name="opacity">
+        Значение для прозрачности закраски полигона.
+      </param><param name="stroke">
+        Цвет линий полигона.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек полигона равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название полигона равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(GMap.NET.WindowsForms.GMapPolygon)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="polygon">
+        Готовый полигон.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда полигон равен или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddPolygon(GMap.NET.WindowsForms.GMapPolygon,System.String)">
+            <summary>
+        Создаёт новый полигон на карте по заданным параметрам.
+      </summary><param name="polygon">
+        Готовый полигон.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда полигон равен или <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название слоя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><param name="layoutId">
+        Название слоя, на котором будет распологаться точка.
+      </param><returns>
+        Ссылку на этот же полигон, если он был добавлен или на полигон из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(System.Collections.Generic.IEnumerable{System.Drawing.Point},System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="points">
+        Точки монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" /> для создания полигона.
+      </param><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название маршрута равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(System.Collections.Generic.IEnumerable{System.Drawing.Point},System.Drawing.Color,System.String,System.String)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="points">
+        Точки монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" /> для создания полигона.
+      </param><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор точек равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название маршрута равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(System.Collections.Generic.IEnumerable{GMap.NET.PointLatLng},System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="coords">
+        Набор координат для маршрута.
+      </param><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор координат равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название маршрута равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(System.Collections.Generic.IEnumerable{GMap.NET.PointLatLng},System.Drawing.Color,System.String,System.String)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="coords">
+        Набор координат для маршрута.
+      </param><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор координат равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название маршрута равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(System.Collections.Generic.IEnumerable{UserMap.Core.NamedGoogleMarker},System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="markers">
+        Набор маркеров для маршрута.
+      </param><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор маркеров равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название маршрута равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(System.Collections.Generic.IEnumerable{UserMap.Core.NamedGoogleMarker},System.Drawing.Color,System.String,System.String)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="markers">
+        Набор маркеров для маршрута.
+      </param><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда набор маркеров равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название маршрута равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(GMap.NET.WindowsForms.GMapRoute)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="route">
+        Готовый маршрут.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда маршрут равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название слоя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.AddRoute(GMap.NET.WindowsForms.GMapRoute,System.String)">
+            <summary>
+        Создаёт новый маршрут на карте по заданным параметрам.
+      </summary><param name="route">
+        Готовый маршрут.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><exception cref="T:System.ArgumentNullException">
+        Возникает, когда маршут равен <see langword="null" />
+      </exception><exception cref="T:System.ArgumentException">
+        Возникает, когда название слоя равно или <see cref="F:System.String.Empty" />, или <see langword="null" />
+      </exception><returns>
+        Ссылку на этот же маршрут, если он был добавлен или на маршрут из карты, если такой уже существует.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.HideAllLayout">
+            <summary>
+        Скрывает все существующие слои.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.ShowAllLayout">
+            <summary>
+        Показывает все существующие слои.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.HideLayoutById(System.String)">
+            <summary>
+        Скрывает слой по названию, если он существует.
+      </summary><param name="layoutId">
+        Название слоя, который будет скрыт.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.Map.ShowLayoutById(System.String)">
+            <summary>
+        Показывает слой по названию, если он существует.
+      </summary><param name="layoutId">
+        Название слоя, который будет скрыт.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.Map.HidePolygonByName(System.String)">
+            <summary>
+        Скрывает полигон по названию, если он существует.
+      </summary><param name="polygonName">
+        Название полигона, который будет скрыт.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.Map.ShowPolygonByName(System.String)">
+            <summary>
+        Показывает полигон по названию, если он существует.
+      </summary><param name="polygonName">
+        Название полигона, который будет скрыт.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.Map.HideRouteByName(System.String)">
+            <summary>
+        Скрывает маршрут по названию, если он существует.
+      </summary><param name="routeName">
+        Название маршрута, который будет скрыт.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.Map.ShowRouteByName(System.String)">
+            <summary>
+        Показывает маршрут по названию, если он существует.
+      </summary><param name="routeName">
+        Название маршрута, который будет скрыт.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.Map.StartDrawPolygon(System.Drawing.Color,System.Int32,System.String)">
+            <summary>
+        Создаёт контекст для рисования нового полигона по указанным параметрам.
+      </summary><param name="fill">
+        Цвет закраски полигона.
+      </param><param name="opacity">
+        Значение прозрачности.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><exception cref="T:System.ArgumentException" /><returns>
+        Ссылку на новый контекст для рисования полигона или на существующий, если рисование не было закончено.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.StartDrawPolygon(System.Drawing.Color,System.Int32,System.String,System.String)">
+            <summary>
+        Создаёт контекст для рисования нового полигона по указанным параметрам.
+      </summary><param name="fill">
+        Цвет закраски полигона.
+      </param><param name="opacity">
+        Значение прозрачности.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><exception cref="T:System.ArgumentException" /><returns>
+        Ссылку на новый контекст для рисования полигона или на существующий, если рисование не было закончено.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.StartDrawPolygon(System.Drawing.Color,System.Int32,System.String,System.String,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Создаёт контекст для рисования нового полигона по указанным параметрам.
+      </summary><param name="fill">
+        Цвет закраски полигона.
+      </param><param name="opacity">
+        Значение прозрачности.
+      </param><param name="polygonName">
+        Название полигона.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><param name="markerType">
+        Тип отображение маркера.
+      </param><exception cref="T:System.ArgumentException" /><returns>
+        Ссылку на новый контекст для рисования полигона или на существующий, если рисование не было закончено.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.CancelPolygonDraw">
+            <summary>
+        Отменяет рисование полигона без сохранения полигона, если рисование активно. Иначе ничего не делает.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.EndPolygonDraw">
+            <summary>
+        Заканчивает рисование полигона с сохранения полигона, если рисование активно. Иначе ничего не делает.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.StartDrawRoute(System.Drawing.Color,System.String)">
+            <summary>
+        Создаёт контекст для рисования нового полигона по указанным параметрам.
+      </summary><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><exception cref="T:System.ArgumentException" /><returns>
+        Ссылку на новый контекст для рисования маршрута или на существующий, если рисование не было закончено.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.StartDrawRoute(System.Drawing.Color,System.String,System.String)">
+            <summary>
+        Создаёт контекст для рисования нового полигона по указанным параметрам.
+      </summary><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><exception cref="T:System.ArgumentException" /><returns>
+        Ссылку на новый контекст для рисования маршрута или на существующий, если рисование не было закончено.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.StartDrawRoute(System.Drawing.Color,System.String,System.String,GMap.NET.WindowsForms.Markers.GMarkerGoogleType)">
+            <summary>
+        Создаёт контекст для рисования нового полигона по указанным параметрам.
+      </summary><param name="stroke">
+        Цвет линий маршрута.
+      </param><param name="routeName">
+        Название маршрута.
+      </param><param name="layoutId">
+        Название слоя.
+      </param><param name="markerType">
+        Тип отображение маркера.
+      </param><exception cref="T:System.ArgumentException" /><returns>
+        Ссылку на новый контекст для рисования маршрута или на существующий, если рисование не было закончено.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.CancelRouteDraw">
+            <summary>
+        Отменяет рисование маршрута без сохранения маршрута, если рисование активно. Иначе ничего не делает.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.EndRouteDraw">
+            <summary>
+        Закнчивает рисование маршрута с сохранением маршрута, если рисование активно. Иначе ничего не делает.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveMarker(System.Drawing.Point)">
+            <summary>
+        Удаляет точку со всех слоёв, если она существует.
+      </summary><param name="screenPoint">
+        Точка, на которой произошло нажатие мышки над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><returns>
+        <see langword="true" />, если маркер был удалён. Иначе <see langword="false" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveMarker(GMap.NET.PointLatLng)">
+            <summary>
+        Удаляет точку со всех слоёв, если она существует.
+      </summary><param name="coords">
+        Координата точки.
+      </param><returns>
+        <see langword="true" />, если маркер был удалён. Иначе <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveMarker(UserMap.Core.NamedGoogleMarker)">
+            <summary>
+        Удаляет точку со всех слоёв, если она существует.
+      </summary><param name="marker">
+        Существующий маркер.
+      </param><returns>
+        <see langword="true" />, если маркер был удалён. Иначе <see langword="false" />.
+        Если <paramref name="marker" /> - <see langword="null" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemovePolygon(System.String)">
+            <summary>
+        Удаляет полигон, если он существует.
+      </summary><param name="polygonName">
+        Название полигона.
+      </param><returns>
+        <see langword="true" />, если полигон был удалён. Иначе <see langword="false" />.
+        Если <paramref name="polygonName" /> - <see langword="null" /> или <see cref="F:System.String.Empty" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemovePolygon(GMap.NET.WindowsForms.GMapPolygon)">
+            <summary>
+        Удаляет полигон, если он существует.
+      </summary><param name="polygon">
+        Существующий полигон.
+      </param><returns>
+        <see langword="true" />, если полигон был удалён. Иначе <see langword="false" />.
+        Если <paramref name="polygon" /> - <see langword="null" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveRoute(System.String)">
+            <summary>
+        Удаляет маршрут, если он существует.
+      </summary><param name="routeName">
+        Название маршрута.
+      </param><returns>
+        <see langword="true" />, если маршрут был удалён. Иначе <see langword="false" />.
+        Если <paramref name="routeName" /> - <see langword="null" /> или <see cref="F:System.String.Empty" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveRoute(GMap.NET.WindowsForms.GMapRoute)">
+            <summary>
+        Удаляет маршрут, если он существует.
+      </summary><param name="route">
+        Существующий маршрут.
+      </param><returns>
+        <see langword="true" />, если маршрут был удалён. Иначе <see langword="false" />.
+        Если <paramref name="route" /> - <see langword="null" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveMarkerFromLayout(System.Drawing.Point,System.String)">
+            <summary>
+        Удаляет маркер из выбранного слоя.
+      </summary><param name="screenPoint">
+        Точка монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="layoutId">
+        Название слоя, с которого будет удаляться маркер.
+      </param><returns>
+        <see langword="true" />, если маркер был удалён. Иначе <see langword="false" />.
+        Если <paramref name="layoutId" /> - <see langword="null" /> или <see cref="F:System.String.Empty" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveMarkerFromLayout(GMap.NET.PointLatLng,System.String)">
+            <summary>
+        Удаляет маркер из выбранного слоя.
+      </summary><param name="coords">
+        Координата маркера на карте.
+      </param><param name="layoutId">
+        Название слоя, с которого будет удаляться маркер.
+      </param><returns>
+        <see langword="true" />, если маркер был удалён. Иначе <see langword="false" />.
+        Если <paramref name="layoutId" /> - <see langword="null" /> или <see cref="F:System.String.Empty" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveMarkerFromLayout(UserMap.Core.NamedGoogleMarker,System.String)">
+            <summary>
+        Удаляет маркер из выбранного слоя.
+      </summary><param name="marker">
+        Существующий маркер для удаления.
+      </param><param name="layoutId">
+        Название слоя, с которого будет удаляться маркер.
+      </param><returns>
+        <see langword="true" />, если маркер был удалён. Иначе <see langword="false" />.
+        Если <paramref name="marker" /> - <see langword="null" />, возвращает <see langword="false" />.
+        Если <paramref name="layoutId" /> - <see langword="null" /> или <see cref="F:System.String.Empty" />, возвращает <see langword="false" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemovePolygonFromLayout(System.String,System.String)">
+            <summary>
+        Удаляет полигон из выбранного слоя.
+      </summary><param name="polygonName">
+        Название полигона для удаления.
+      </param><param name="layoutId">
+        Название слоя, с которого будет удаляться полигон.
+      </param><returns>
+        <see langword="true" />, если полигон был удалён. Иначе <see langword="false" />.
+        Если <paramref name="polygonName" /> - <see langword="null" /> или <see cref="F:System.String.Empty" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemovePolygonFromLayout(GMap.NET.WindowsForms.GMapPolygon,System.String)">
+            <summary>
+        Удаляет полигон из выбранного слоя.
+      </summary><param name="polygon">
+        Существующий полигон.
+      </param><param name="layoutId">
+        Название слоя, с которого будет удаляться полигон.
+      </param><returns>
+        <see langword="true" />, если полигон был удалён. Иначе <see langword="false" />.
+        Если <paramref name="polygon" /> - <see langword="null" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveRouteFromLayout(System.String,System.String)">
+            <summary>
+        Удаляет маршрут из выбранного слоя.
+      </summary><param name="routeName">
+        Название маршрута, для удаления.
+      </param><param name="layoutId">
+        Название слоя, с которого будет удаляться полигон.
+      </param><returns>
+        <see langword="true" />, если маршрут был удалён. Иначе <see langword="false" />.
+        Если <paramref name="routeName" /> - <see langword="null" /> или <see cref="F:System.String.Empty" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveRouteFromLayout(GMap.NET.WindowsForms.GMapRoute,System.String)">
+            <summary>
+        Удаляет маршрут из выбранного слоя.
+      </summary><param name="route">
+        Существующий маршрут.
+      </param><param name="layoutId">
+        Название слоя, с которого будет удаляться маршрут.
+      </param><returns>
+        <see langword="true" />, если маршрут был удалён. Иначе <see langword="false" />.
+        Если <paramref name="route" /> - <see langword="null" />, возвращает <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetMarkersByLayoutOrNull(System.String)">
+            <summary>
+        Возвращает коллекцию маркеров из указанного слоя.
+      </summary><param name="layoutId">
+        Название слоя, с которого будут получатся маркера.
+      </param><returns>
+        Коллекция <see cref="T:GMap.NET.WindowsForms.GMapMarker" />, если слой существует. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetPolygonsByLayoutOrNull(System.String)">
+            <summary>
+        Возвращает коллекцию полигонов из указанного слоя.
+      </summary><param name="layoutId">
+        Название слоя, с которого будут получатся полигоны.
+      </param><returns>
+        Коллекция <see cref="T:GMap.NET.WindowsForms.GMapPolygon" />, если слой существует. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetRoutesByLayoutOrNull(System.String)">
+            <summary>
+        Возвращает коллекцию маршрутов из указанного слоя.
+      </summary><param name="layoutId">
+        Название слоя, с которого будут получатся маршруты.
+      </param><returns>
+        Коллекция <see cref="T:GMap.NET.WindowsForms.GMapRoute" />, если слой существует. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetMarkerByCoordsOrNull(System.Drawing.Point)">
+            <summary>
+        Возвращает первое вхождение маркера по указанным параметрам.
+      </summary><param name="screenPoint">
+        Точка монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><returns>
+        Экземпляр <see cref="T:GMap.NET.WindowsForms.GMapMarker" />, если он находится не подалёку от <paramref name="screenPoint" />. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetMarkerByCoordsOrNull(GMap.NET.PointLatLng)">
+            <summary>
+        Возвращает первое вхождение маркера по указанным параметрам.
+      </summary><param name="coord">
+        Координата маркера.
+      </param><returns>
+        Экземпляр <see cref="T:GMap.NET.WindowsForms.GMapMarker" />, если он находится не подалёку от <paramref name="coord" />. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetMarkerByCoordsInLayoutOrNull(System.Drawing.Point,System.String)">
+            <summary>
+        Возвращает первое вхождение маркера по указанным параметрам.
+      </summary><param name="screenPoint">
+        Точка монитора над компонентом <see cref="T:GMap.NET.WindowsForms.GMapControl" />.
+      </param><param name="layoutId">
+        Слой, в котором будет искаться маркер.
+      </param><returns>
+        Экземпляр <see cref="T:GMap.NET.WindowsForms.GMapMarker" />, если он находится не подалёку от <paramref name="screenPoint" />. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetMarkerByCoordsInLayoutOrNull(GMap.NET.PointLatLng,System.String)">
+            <summary>
+        Возвращает первое вхождение маркера по указанным параметрам.
+      </summary><param name="coord">
+        Координата маркера.
+      </param><param name="layoutId">
+        Слой, в котором будет искаться маркер.
+      </param><returns>
+        Экземпляр <see cref="T:GMap.NET.WindowsForms.GMapMarker" />, если он находится не подалёку от <paramref name="coord" />. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetPolygonByNameOrNull(System.String)">
+            <summary>
+        Возвращает полигон по имени.
+      </summary><param name="polygonName">
+        Название полигона, для поиска.
+      </param><returns>
+        Экземпляр <see cref="T:GMap.NET.WindowsForms.GMapPolygon" />, если существует с таким <paramref name="polygonName" />. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.GetRouteByNameOrNull(System.String)">
+            <summary>
+        Возвращает маршрут по имени.
+      </summary><param name="routeName">
+        Название маршрута, для поиска.
+      </param><returns>
+        Экземпляр <see cref="T:GMap.NET.WindowsForms.GMapRoute" />, если существует с таким <paramref name="routeName" />. Иначе <see langword="null" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.LayoutExist(System.String)">
+            <summary>
+        Проверяет, существует ли слой по указанному названию.
+      </summary><param name="layoutId">
+        Название слоя для поиска.
+      </param><returns>
+        <see langword="true" />, если слой с таким <paramref name="layoutId" /> существует. Иначе <see langword="false" />.
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.ClearMap">
+            <summary>
+        Убирает все объекты с карты.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.ClearLayout(System.String)">
+            <summary>
+        Чистит слой по названию, если он существует.
+      </summary><param name="layoutId">
+        Название слоя очистки.
+      </param>
+        </member>
+        <member name="M:UserMap.Core.Map.ClearAllMarkers">
+            <summary>
+        Убирает все независимые маркера с карты.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.ClearAllPolygons">
+            <summary>
+        Убирает все полигоны с карты.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.ClearAllRoutes">
+            <summary>
+        Убирает все маршруты с карты.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.AddLayout(System.String)">
+            <summary>
+        Добавляет новый слой на карту, если он не существует.
+      </summary><param name="layoutId">
+        Название нового слоя.
+      </param><returns>
+        <see langword="true" /> если слой был создан. Если полигон уже существовал - <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.RemoveLayout(System.String)">
+            <summary>
+        Удаляет слой по названию, если он существует.
+      </summary><param name="layoutId">
+        Название слоя для удаления.
+      </param><returns>
+        <see langword="true" /> если слой был успешно удалён, иначе - <see langword="false" />
+      </returns>
+        </member>
+        <member name="M:UserMap.Core.Map.ZoomPlus">
+            <summary>
+        Прибавляет 1 к приближению карты.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.ZoomMinus">
+            <summary>
+        Убавляет 1 к приближению карты.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.Map.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:UserMap.Core.MarkersComparator">
+            <summary>
+        Служит для сравнивания двух объектов типа <see cref="T:GMap.NET.WindowsForms.GMapMarker" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.MarkersComparator.Equals(GMap.NET.WindowsForms.GMapMarker,GMap.NET.WindowsForms.GMapMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.MarkersComparator.GetHashCode(GMap.NET.WindowsForms.GMapMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="T:UserMap.Core.PolygonsComparator">
+            <summary>
+        Служит для сравнивания двух объектов типа <see cref="T:GMap.NET.WindowsForms.GMapPolygon" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.PolygonsComparator.Equals(GMap.NET.WindowsForms.GMapPolygon,GMap.NET.WindowsForms.GMapPolygon)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.PolygonsComparator.GetHashCode(GMap.NET.WindowsForms.GMapPolygon)">
+            <inheritdoc/>
+        </member>
+        <member name="T:UserMap.Core.RoutesComparator">
+            <summary>
+        Служит для сравнивания двух объектов типа <see cref="T:GMap.NET.WindowsForms.GMapRoute" />.
+      </summary>
+        </member>
+        <member name="M:UserMap.Core.RoutesComparator.Equals(GMap.NET.WindowsForms.GMapRoute,GMap.NET.WindowsForms.GMapRoute)">
+            <inheritdoc/>
+        </member>
+        <member name="M:UserMap.Core.RoutesComparator.GetHashCode(GMap.NET.WindowsForms.GMapRoute)">
+            <inheritdoc/>
+        </member>
+        <member name="F:UserMap.HelpWindows.ItemConfigurationWindow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UserMap.HelpWindows.ItemConfigurationWindow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UserMap.HelpWindows.ItemConfigurationWindow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:UserMap.HelpWindows.MultiBindingObjectEditor.AddNewPage(System.String,System.Object)">
+            <summary>
+            Добавляет новую страницу в елемент <see cref="T:System.Windows.Forms.TabControl"/> с контентом.
+            Контент может представлять <see cref="T:System.Windows.Forms.Control"/> и <see cref="T:UserMap.Services.ISavable"/>.
+            </summary>
+            <param name="pageName">Название новой страницы.</param>
+            <param name="content">Контент, который будет пресутствовать на странице.</param>
+        </member>
+        <member name="F:UserMap.HelpWindows.MultiBindingObjectEditor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UserMap.HelpWindows.MultiBindingObjectEditor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UserMap.HelpWindows.MultiBindingObjectEditor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:UserMap.MapWindow.AcceptFiltration">
+            <summary>
+            Применение фильтрации для карты в зависимости от выбраных объектов
+            </summary>
+        </member>
+        <member name="F:UserMap.MapWindow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UserMap.MapWindow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UserMap.MapWindow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:UserMap.Services.ILogger">
+            <summary>
+            Логирует сообщение или исключение.
+            </summary>
+        </member>
+        <member name="P:UserMap.Services.ILogger.FilePath">
+            <summary>
+            Путь файл, в который будет логироваться.
+            </summary>
+        </member>
+        <member name="M:UserMap.Services.ILogger.Log(System.String)">
+            <summary>
+            Логирование строки.
+            </summary>
+            <param name="text">Строка для логирования.</param>
+        </member>
+        <member name="M:UserMap.Services.ILogger.Log(System.Exception)">
+            <summary>
+            Логирование исключения.
+            </summary>
+            <param name="ex">Исключение для логирования.</param>
+        </member>
+        <member name="F:UserMap.UserControls.EmissionsUC.components">
+            <summary> 
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:UserMap.UserControls.EmissionsUC.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:UserMap.UserControls.EmissionsUC.InitializeComponent">
+            <summary> 
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="F:UserMap.UserControls.IssueSeriesUC.components">
+            <summary> 
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:UserMap.UserControls.IssueSeriesUC.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:UserMap.UserControls.IssueSeriesUC.InitializeComponent">
+            <summary> 
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="F:UserMap.UserControls.ItemInfo.components">
+            <summary> 
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:UserMap.UserControls.ItemInfo.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:UserMap.UserControls.ItemInfo.InitializeComponent">
+            <summary> 
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="F:UserMap.UserControls.MainMarkerInfoUC.components">
+            <summary> 
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:UserMap.UserControls.MainMarkerInfoUC.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:UserMap.UserControls.MainMarkerInfoUC.InitializeComponent">
+            <summary> 
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="P:UserMap.UserControls.MedStatUserControl.FindObjectId">
+            <summary>
+            Представляет ИД объекта, по котором будет выводиться мед статистика.
+            </summary>
+        </member>
+        <member name="M:UserMap.UserControls.MedStatUserControl.LoadFilteredMedStat">
+            <summary>
+            Загрузка мед. статистики в зависимости от выбранных фильтров.
+            </summary>
+        </member>
+        <member name="F:UserMap.UserControls.MedStatUserControl.components">
+            <summary> 
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:UserMap.UserControls.MedStatUserControl.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:UserMap.UserControls.MedStatUserControl.InitializeComponent">
+            <summary> 
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:UserMap.Properties.Resources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:UserMap.Properties.Resources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:UserMap.Properties.Resources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+    </members>
+</doc>
